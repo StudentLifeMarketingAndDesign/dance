@@ -47,7 +47,7 @@
 <% if PersonnelOffice %><p>Office: $PersonnelOffice</p><% end_if %>
 
 <% if ContentImage %>
-<a href="$Link"><img class="right news" src="<% control ContentImage %><% control CroppedImage(220, 190) %> $URL <% end_control %><% end_control %>" alt="$Title"/></a>
+<a href="$Link"><img class="right news" src="<% loop ContentImage %><% loop CroppedImage(220, 190) %> $URL <% end_loop %><% end_loop %>" alt="$Title"/></a>
 
 <% end_if %>
 $Content

@@ -12,7 +12,7 @@
 
 <h1>$Title</h1>
 <% if NewsImage %>
-<a href="$Link"><img class="right news" src="<% control NewsImage %><% control CroppedImage(220, 190) %> $URL <% end_control %><% end_control %>" alt="$Title"/></a>
+<a href="$Link"><img class="right news" src="<% loop NewsImage %><% loop CroppedImage(220, 190) %> $URL <% end_loop %><% end_loop %>" alt="$Title"/></a>
 
 <% end_if %>
 <% if NewsLocation %>

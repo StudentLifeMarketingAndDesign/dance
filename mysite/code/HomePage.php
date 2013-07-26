@@ -25,9 +25,9 @@ class HomePage extends Page {
    
    function getCMSFields() {
    $fields = parent::getCMSFields();
-   	$fields->addFieldToTab('Root.Content.Main', new TextField('HeadlineText', 'Headline'));
-	   	$fields->addFieldToTab('Root.Content.Main', new TextField('HomeLink', 'Link'));
-   $fields->addFieldToTab('Root.Content.Images', new ImageField('FeatureImage', 'Feature Box Image MUST be 715x293 pixels'));
+   	$fields->addFieldToTab('Root.Main', new TextField('HeadlineText', 'Headline'));
+	   	$fields->addFieldToTab('Root.Main', new TextField('HomeLink', 'Link'));
+   $fields->addFieldToTab('Root.Images', new UploadField('FeatureImage', 'Feature Box Image MUST be 715x293 pixels'));
 
 
     	
@@ -45,7 +45,8 @@ class HomePage_Controller extends Page_Controller {
 	
 	
 		function rss() {
-			$set = DataObject::get("NewsPage");
+			//$set = DataObject::get("NewsPage");
+			$set = NewsPage::get(); 
 			
 			$rss = new RSSFeed($set, $this->Link(), "News Feed", "Shows a list of the most recently updated news and events.", "Title", "Content", "Author");
 			$rss->outputToBrowser();

@@ -16,14 +16,14 @@ $Content
 
 
 <ul class="faculty-holder">
-<% control Children %>
+<% loop Children %>
 <li>
 
 <h2><a href="$Link">$Title</a></h2>
 <h3><em>$PersonnelTitle</em></h3>
 <p class="more"><a href="mailto:$PersonnelEmail">$PersonnelEmail</a></p>
 </li>
-<% end_control %>
+<% end_loop %>
 
 </ul>
 </div>

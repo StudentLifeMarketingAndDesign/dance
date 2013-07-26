@@ -98,11 +98,11 @@ $Layout
 </div>
 
 	<ul class="menu">
-		<% control Menu(1) %>
+		<% loop Menu(1) %>
         	<li class="$URLSegment"><a href="$Link">$MenuTitle</a>
 				<% if URLSegment == upcoming-events %>
 				<ul>
-					<% control GetChildren(3) %>
+					<% loop GetChildren(3) %>
 						<li>
 						<% if ExternalLink %>
 							<a href="$ExternalLink">
@@ -110,19 +110,19 @@ $Layout
 							<a href="$Link">
 						<% end_if %>
 						$Title</a></li>
-					<% end_control %>
+					<% end_loop %>
 				</ul>
 				<% else %>
             	<% if Children %>
             	<ul>
-					<% control Children %>
+					<% loop Children %>
 						<li><a href="$Link">$Title</a></li>
-                    <% end_control %>
+                    <% end_loop %>
                 </ul>
 				<% end_if %>
 				<% end_if %>
 			</li>
-            <% end_control %>
+            <% end_loop %>
       </ul>
 <p class="clas"><a href="http://www.clas.uiowa.edu/"><img src="/$ThemeDir/images/clas-logo.png" border="1" alt="College of Liberal Arts and Sciences" width="235" height="20" /></a></p>
 <p class="footer">The University of Iowa $Now.Year. All rights reserved.<br />

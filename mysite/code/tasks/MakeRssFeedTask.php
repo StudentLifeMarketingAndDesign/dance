@@ -13,7 +13,8 @@ class MakeRSSFeedTask extends BuildTask {
  
     function makeRSS() {
     
-    	$pages = DataObject::get("Page");
+    	//$pages = DataObject::get("Page");
+    	$pages = Page::get(); 
     	
     	echo '<?xml version="1.0" encoding="ISO-8859-1" ?>
 <rss version="2.0">

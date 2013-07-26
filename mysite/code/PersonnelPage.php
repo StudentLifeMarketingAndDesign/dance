@@ -29,21 +29,21 @@ class PersonnelPage extends Page {
    function getCMSFields() {
    $fields = parent::getCMSFields();
    
-	$fields->addFieldToTab('Root.Content.Main', new TextField('PersonnelEmail', 'Email Address'));
-	$fields->addFieldToTab('Root.Content.Main', new TextField('PersonnelTitle', 'Title'));
-	$fields->addFieldToTab('Root.Content.Main', new TextField('PersonnelPhone', 'Phone (optional)'));
-	$fields->addFieldToTab('Root.Content.Main', new TextField('PersonnelFax', 'Fax (optional)'));
-	$fields->addFieldToTab('Root.Content.Main', new TextField('PersonnelOffice', 'Office (optional)'));
-    $fields->addFieldToTab('Root.Content.Images', new ImageField('ContentImage', 'Profile Picture Here MUST be 484x486 pixels'));
-	$fields->addFieldToTab('Root.Content.Video', new TextField('YoutubeLink', 'Enter code at end of youtube url here'));
-	$fields->addFieldToTab('Root.Content.Video', new TextField('YoutubeCaption', 'Enter caption here'));
-		$fields->addFieldToTab('Root.Content.Tab', new TextField('TabTitle', 'Enter Headline here'));
-	$fields->addFieldToTab('Root.Content.Tab', new TextField('TabCaption', 'Enter caption here'));
-	$fields->addFieldToTab('Root.Content.Tab', new TextField('TabLink', 'Enter Link here'));
-		$fields->addFieldToTab('Root.Content.Tab', new TextField('TabCaption2', 'Enter caption here'));
-	$fields->addFieldToTab('Root.Content.Tab', new TextField('TabLink2', 'Enter Link here'));
-		$fields->addFieldToTab('Root.Content.Tab', new TextField('LightBox', 'Enter Lightbox link here'));
-		$fields->addFieldToTab('Root.Content.Tab', new TextField('LightboxSet', 'Enter Lightbox link here'));
+	$fields->addFieldToTab('Root.Main', new TextField('PersonnelEmail', 'Email Address'));
+	$fields->addFieldToTab('Root.Main', new TextField('PersonnelTitle', 'Title'));
+	$fields->addFieldToTab('Root.Main', new TextField('PersonnelPhone', 'Phone (optional)'));
+	$fields->addFieldToTab('Root.Main', new TextField('PersonnelFax', 'Fax (optional)'));
+	$fields->addFieldToTab('Root.Main', new TextField('PersonnelOffice', 'Office (optional)'));
+    $fields->addFieldToTab('Root.Images', new UploadField('ContentImage', 'Profile Picture Here MUST be 484x486 pixels'));
+	$fields->addFieldToTab('Root.Video', new TextField('YoutubeLink', 'Enter code at end of youtube url here'));
+	$fields->addFieldToTab('Root.Video', new TextField('YoutubeCaption', 'Enter caption here'));
+		$fields->addFieldToTab('Root.Tab', new TextField('TabTitle', 'Enter Headline here'));
+	$fields->addFieldToTab('Root.Tab', new TextField('TabCaption', 'Enter caption here'));
+	$fields->addFieldToTab('Root.Tab', new TextField('TabLink', 'Enter Link here'));
+		$fields->addFieldToTab('Root.Tab', new TextField('TabCaption2', 'Enter caption here'));
+	$fields->addFieldToTab('Root.Tab', new TextField('TabLink2', 'Enter Link here'));
+		$fields->addFieldToTab('Root.Tab', new TextField('LightBox', 'Enter Lightbox link here'));
+		$fields->addFieldToTab('Root.Tab', new TextField('LightboxSet', 'Enter Lightbox link here'));
 	
    return $fields;
 }

@@ -29,8 +29,8 @@ $Content
 <br />
 <br />
 <ul>
-<!--% control News %-->
-<% control Children %>
+<!--% loop News %-->
+<% loop Children %>
 	<li>
 	<% if NewsImage %>
 		<% if ExternalLink %>
@@ -38,7 +38,7 @@ $Content
 		<% else %>
 			<a href="$Link">
 		<% end_if %>
-		<img src="<% control NewsImage %><% control CroppedImage(120, 90) %> $URL <% end_control %><% end_control %>" alt="$Title"/></a>
+		<img src="<% loop NewsImage %><% loop CroppedImage(120, 90) %> $URL <% end_loop %><% end_loop %>" alt="$Title"/></a>
 	<% end_if %>
 	<% if ExternalLink %>
 		<h3><a href="$ExternalLink">$Title</a></h3>
@@ -57,7 +57,7 @@ $Content
 	<% else %>
 		<p class="more"><a href="$Link">Read More</a></p>
 	<% end_if %></li>
-<% end_control %>
+<% end_loop %>
 
 
 </ul>
@@ -71,13 +71,13 @@ $Content
 <a href="$allNews.PrevLink"><< Prev</a> |
 <% end_if %>
 
-<% control allNews.Pages %>
+<% loop allNews.Pages %>
 <% if CurrentBool %>
 <strong>$PageNum</strong>
 <% else %>
 <a href="$Link" title="Go to page $PageNum">$PageNum</a>
 <% end_if %>
-<% end_control %>
+<% end_loop %>
 
 <% if allNews.NextLink %>
 | <a href="$allNews.NextLink">Next >></a>

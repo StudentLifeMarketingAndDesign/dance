@@ -29,7 +29,7 @@
 </div>
 <h1 class="homeh1">Department of Dance</h1>
 <div id="mastheadcolor"><img src="$ThemeDir/images/color3.jpg" width="840" alt="Feature Image" /></div>
-<div id="feature" style="background: url(<% control FeatureImage.SetWidth(715) %>$Filename<% end_control %>) no-repeat scroll right bottom;">
+<div id="feature" style="background: url(<% loop FeatureImage.SetWidth(715) %>$Filename<% end_loop %>) no-repeat scroll right bottom;">
 <div class="heading">$HeadlineText</div>
 <p>$Content <span class="grey3"><a href="$HomeLink">Read More &gt;&gt;</a></span></p>
 </div>
@@ -41,7 +41,7 @@
 <div id="events">
 <h2><a href="$BaseHref/upcoming-events">News &amp; Events</a></h2>
 <ul>
-<% control News %>
+<% loop News %>
 <li>
 
 <% if NewsImage %>
@@ -50,7 +50,7 @@
 	<% else %>
 		<a href="$Link">
 	<% end_if %>
-	<img src="<% control NewsImage %><% control CroppedImage(120, 90) %> $URL <% end_control %><% end_control %>" alt="$Title"/></a>
+	<img src="<% loop NewsImage %><% loop CroppedImage(120, 90) %> $URL <% end_loop %><% end_loop %>" alt="$Title"/></a>
 <% end_if %>
 <% if ExternalLink %>
 	<h3><a href="$ExternalLink">$Title</a></h3>
@@ -72,7 +72,7 @@
 
 
 </li>
-<% end_control %>
+<% end_loop %>
 
 
 </ul>

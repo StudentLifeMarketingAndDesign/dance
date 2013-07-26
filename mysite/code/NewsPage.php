@@ -24,13 +24,13 @@ class NewsPage extends Page {
 function getCMSFields() {
 	$fields = parent::getCMSFields();
 	
-	$fields->addFieldToTab('Root.Content.Main', new TextField('NewsDate', 'Enter News/Events Date and Time Here'));
-	$fields->addFieldToTab('Root.Content.Main', new TextField('NewsLocation', 'Optional Location in this field'));
-	$fields->addFieldToTab('Root.Content.Images', new ImageField('NewsImage', 'News/Events Image MUST be 484x486 pixels'));
-	$fields->addFieldToTab('Root.Content.Main', new TextField('ExternalLink', 'External Link that links the user to another site instead of an interior page - Enter Full URL that you want to link to'));
-	$fields->addFieldToTab('Root.Content.Video', new TextField('EmbedVideo', 'Enter the URL of the embedded video file.'));
-	$fields->addFieldToTab('Root.Content.Youtube', new TextField('YoutubeLink', 'Enter code at end of youtube url here'));
-	$fields->addFieldToTab('Root.Content.Youtube', new TextField('YoutubeCaption', 'Enter caption here'));
+	$fields->addFieldToTab('Root.Main', new TextField('NewsDate', 'Enter News/Events Date and Time Here'));
+	$fields->addFieldToTab('Root.Main', new TextField('NewsLocation', 'Optional Location in this field'));
+	$fields->addFieldToTab('Root.Images', new UploadField('NewsImage', 'News/Events Image MUST be 484x486 pixels'));
+	$fields->addFieldToTab('Root.Main', new TextField('ExternalLink', 'External Link that links the user to another site instead of an interior page - Enter Full URL that you want to link to'));
+	$fields->addFieldToTab('Root.Video', new TextField('EmbedVideo', 'Enter the URL of the embedded video file.'));
+	$fields->addFieldToTab('Root.Youtube', new TextField('YoutubeLink', 'Enter code at end of youtube url here'));
+	$fields->addFieldToTab('Root.Youtube', new TextField('YoutubeCaption', 'Enter caption here'));
 
 
 	

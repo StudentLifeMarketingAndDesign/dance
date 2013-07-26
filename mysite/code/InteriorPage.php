@@ -30,13 +30,13 @@ class InteriorPage extends Page {
    function getCMSFields() {
    $fields = parent::getCMSFields();
    
-	$fields->addFieldToTab('Root.Content.Tab', new TextField('TabTitle', 'Enter Headline here'));
-	$fields->addFieldToTab('Root.Content.Tab', new TextField('TabCaption', 'Enter caption here'));
-	$fields->addFieldToTab('Root.Content.Tab', new TextField('TabLink', 'Enter Link here'));
-		$fields->addFieldToTab('Root.Content.Tab', new TextField('TabCaption2', 'Enter caption here'));
-	$fields->addFieldToTab('Root.Content.Tab', new TextField('TabLink2', 'Enter Link here'));
-		$fields->addFieldToTab('Root.Content.Tab', new TextField('LightBox', 'Enter Lightbox link here'));
-		$fields->addFieldToTab('Root.Content.Tab', new TextField('LightboxSet', 'Enter Lightbox link here'));
+	$fields->addFieldToTab('Root.Tab', new TextField('TabTitle', 'Enter Headline here'));
+	$fields->addFieldToTab('Root.Tab', new TextField('TabCaption', 'Enter caption here'));
+	$fields->addFieldToTab('Root.Tab', new TextField('TabLink', 'Enter Link here'));
+		$fields->addFieldToTab('Root.Tab', new TextField('TabCaption2', 'Enter caption here'));
+	$fields->addFieldToTab('Root.Tab', new TextField('TabLink2', 'Enter Link here'));
+		$fields->addFieldToTab('Root.Tab', new TextField('LightBox', 'Enter Lightbox link here'));
+		$fields->addFieldToTab('Root.Tab', new TextField('LightboxSet', 'Enter Lightbox link here'));
 
 	$array = array(
 	  'Orange' => 'Orange',
@@ -44,7 +44,7 @@ class InteriorPage extends Page {
 	  'Green' => 'Green',
 	);
 	 
-	$fields->addFieldToTab('Root.Content.Tab', new DropdownField('TabType','TabType', $array));
+	$fields->addFieldToTab('Root.Tab', new DropdownField('TabType','TabType', $array));
 
 
 

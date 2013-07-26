@@ -17,23 +17,24 @@ class NewsHolder extends Page {
 								   
 	);
 
-static $allowed_children = array('NewsPage', 'NewsArchive');
+static $allowed_children = array('NewsPage');
 	
 	
    function getCMSFields() {
 	$fields = parent::getCMSFields();
-	$fields->addFieldToTab('Root.Content.Images', new ImageField('ContentImage', 'Event Image 469x331 pixels'));
-	$fields->addFieldToTab('Root.Content.Tab', new TextField('TabTitle', 'Enter Headline here'));
-	$fields->addFieldToTab('Root.Content.Tab', new TextField('TabCaption', 'Enter caption here'));
-	$fields->addFieldToTab('Root.Content.Tab', new TextField('TabLink', 'Enter Link here'));
-	$fields->addFieldToTab('Root.Content.Tab', new TextField('TabCaption2', 'Enter caption here'));
-	$fields->addFieldToTab('Root.Content.Tab', new TextField('TabLink2', 'Enter Link here'));
+	$fields->addFieldToTab('Root.Images', new UploadField('ContentImage', 'Event Image 469x331 pixels'));
+	$fields->addFieldToTab('Root.Tab', new TextField('TabTitle', 'Enter Headline here'));
+	$fields->addFieldToTab('Root.Tab', new TextField('TabCaption', 'Enter caption here'));
+	$fields->addFieldToTab('Root.Tab', new TextField('TabLink', 'Enter Link here'));
+	$fields->addFieldToTab('Root.Tab', new TextField('TabCaption2', 'Enter caption here'));
+	$fields->addFieldToTab('Root.Tab', new TextField('TabLink2', 'Enter Link here'));
     return $fields;
    }
    
 	public function GetChildren($Limit = 5) {
 		$Children = $this->Children();	
-		return $Children->getRange(0,$Limit);
+		//return $Children->getRange(0,$Limit);
+		return $Children->limit($Limit,0);
 	}
 }
 
@@ -44,7 +45,8 @@ class NewsHolder_Controller extends Page_Controller {
 	}
 	
 	function rss() {
-		$set = DataObject::get("NewsPage");
+		//$set = DataObject::get("NewsPage");
+		$set = NewsPage::get(); 
 		$rss = new RSSFeed($set, $this->Link(), "News Feed", "Shows a list of the most recently updated news and events.", "Title", "Content", "Author");
 		$rss->outputToBrowser();
 	}
