@@ -1,0 +1,41 @@
+.interior-mask, .interior-image {
+float:right;
+height:340px;
+margin:0px;
+width:321px;
+}
+
+.interior-mask {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(../images/interior-image.png) no-repeat scroll -5px 0;
+}
+
+
+#nav li.performance-opportunities ul {
+margin: 0 0 0 -130px;
+}
+
+#nav li.upcoming-events ul {
+margin: 0 0 0 -80px;
+}
+
+#nav li.students ul {
+margin: 0 0 0 -49px;
+}
+
+#nav li.admissions ul {
+margin: 0 0 0 -56px;
+}
+
+
+
+#nav li.about ul {
+margin: 0 0 0 -36px;
+}
+
+#nav li.home, #nav li.admissions, #nav li.students, #nav li.upcoming-events, #nav li.upcoming-events ul, #nav li.performance-opportunities, #nav li.about {
+border-right:none;
+
+}
